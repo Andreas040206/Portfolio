@@ -39,11 +39,15 @@ body {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 50vh;
-  overflow: hidden;
-  width: 950px;
+  top: 40vh;
+  width: 920px;
   height: 90px;
   z-index: 10;
+  animation-name: none;
+  animation-delay: 4.5s;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  gap: 5px;
 }
 
 .typeline {
@@ -52,11 +56,38 @@ body {
   width: 3px;
   margin-top: 16px;
   animation: forwards;
-  animation-name: typelineBlink, cWhite, typelineBlink;
-  animation-duration: 1.5s, 1.15s, 1.5s;
+  animation-name: typelineBlink, cWhite, typelineBlink, cWhite, typelineBlink,
+    cWhite, typelineBlink;
+  animation-duration: 1.5s, 1.15s, 1.5s, 1.15s, 1.5s, 3s, 1.5s;
   animation-timing-function: linear;
-  animation-delay: 0s, 3s, 4s;
-  animation-iteration-count: 2, 1, 1;
+  animation-delay: 0s, 3s, 4.15s, 5.65s, 6.5s, 8s, 11s, 12.5s;
+  animation-iteration-count: 2, 1, 1, 1, 1, 1, 1;
+}
+
+.moving-code {
+  color: var(--primary-color);
+  font-size: 25px;
+  position: absolute;
+  animation: moveLeftText 15s linear forwards;
+  white-space: nowrap;
+}
+
+.moving-code:nth-child(2) {
+  top: 10vh;
+  animation-duration: 12s;
+}
+
+.moving-code:nth-child(3) {
+  rotate: 90deg;
+  left: 0px;
+}
+
+.moving-code:nth-child(4) {
+  bottom: 10vh;
+  animation-direction: reverse;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  transform: translateX(100%);
 }
 
 @keyframes typelineBlink {
@@ -80,5 +111,23 @@ body {
   }
   100% {
     background-color: var(--primary-color);
+  }
+}
+
+@keyframes flipText {
+  0% {
+    transform: perspective(500px);
+  }
+  100% {
+    transform: perspective(500px) rotateX(360deg);
+  }
+}
+
+@keyframes moveLeftText {
+  0% {
+    transform: translateX(100%); /* Start off-screen on the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End off-screen on the left */
   }
 }
