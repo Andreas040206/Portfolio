@@ -4,12 +4,17 @@ import createProjects from "./pages/projects";
 import createContact from "./pages/contact";
 
 const appendPage = () => {
-  Promise.all([
-    createHome(),
-    createDisplay(),
-    createProjects(),
-    createContact(),
-  ]).then((el) => {
+  createDisplay().then((el) => {
+    document.body.appendChild(el);
+  });
+
+  createHome().then((el) => {
+    document.body.appendChild(el);
+  });
+  createProjects().then((el) => {
+    document.body.appendChild(el);
+  });
+  createContact().then((el) => {
     document.body.appendChild(el);
   });
 };
