@@ -217,6 +217,7 @@ body {
   padding: 0px 2vw;
   justify-content: flex-end;
   position: absolute;
+  z-index: 20;
 }
 
 .nav-con.fixed {
@@ -259,6 +260,7 @@ body {
   width: 130px;
   border-radius: 20px;
   position: absolute;
+  transition: cubic-bezier(0.06, 0.26, 0.45, 1.19) 0.3s;
 }
 
 .homeInfo-con {
@@ -302,4 +304,11 @@ body {
     box-shadow: var(--secondary-color) 7px 7px;
     opacity: 1;
   }
+}
+
+/* Projects */
+
+.projects-con {
+  height: 100vh;
+  background-color: var(--bg-color);
 }
