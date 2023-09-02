@@ -7,7 +7,6 @@ const appendPage = () => {
   createDisplay().then((el) => {
     document.body.appendChild(el);
   });
-
   createHome().then((el) => {
     document.body.appendChild(el);
   });
