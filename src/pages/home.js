@@ -17,7 +17,7 @@ import javascriptSrc from "../Img/javascript.svg";
 import jestSrc from "../Img/jest.svg";
 import webpackSrc from "../Img/webpack.svg";
 import gitSrc from "../Img/git.svg";
-import { parse } from "ipaddr.js";
+import chatGptSrc from "../Img/chatgpt.png";
 
 const createHome = () => {
   return new Promise((resolve) => {
@@ -304,6 +304,7 @@ const createHome = () => {
           skillsIcon4.classList.add("skill-icon-animation");
           skillsIcon5.classList.add("skill-icon-animation");
           skillsIcon6.classList.add("skill-icon-animation");
+          skillsIcon7.classList.add("skill-icon-animation");
         }, 1500);
       }
     });
@@ -395,12 +396,27 @@ const createHome = () => {
     skillsIcon6.appendChild(icon6);
     skillsIcon6.appendChild(skillIconText6);
 
+    const skillsIcon7 = document.createElement("div");
+    skillsIcon7.classList.add("skill-icon-con", "flex-column");
+
+    const icon7 = new Image();
+    icon7.src = chatGptSrc;
+    icon7.classList.add("skill-icon-img");
+
+    const skillIconText7 = document.createElement("span");
+    skillIconText7.classList.add("normal-text");
+    skillIconText7.textContent = "ChatGPT";
+
+    skillsIcon7.appendChild(icon7);
+    skillsIcon7.appendChild(skillIconText7);
+
     skillsIconCon.appendChild(skillsIcon1);
     skillsIconCon.appendChild(skillsIcon2);
     skillsIconCon.appendChild(skillsIcon3);
     skillsIconCon.appendChild(skillsIcon4);
     skillsIconCon.appendChild(skillsIcon5);
     skillsIconCon.appendChild(skillsIcon6);
+    skillsIconCon.appendChild(skillsIcon7);
 
     skillsCon.appendChild(skillsHeaderCon);
     skillsCon.appendChild(skillsUnderline);
