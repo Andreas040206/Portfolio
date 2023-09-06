@@ -3,7 +3,8 @@ import { typingAnimation, deleteTypedText } from "../tools";
 const createDisplay = () => {
   return new Promise((resolve) => {
     const content = document.createElement("header");
-    content.classList.add("display-con", "flex-row-center");
+    content.setAttribute("id", "display");
+    content.classList.add("display-con", "flex-row", "center");
 
     const typingCon = document.createElement("div");
     typingCon.classList.add("typing-con");
