@@ -118,35 +118,35 @@ const createHome = () => {
     hoverShape.style.right = "calc(4.5vw + 413.2px - 130px)";
     aboutBtn.style.color = "var(--bg-color)";
 
-    // window.addEventListener("scroll", () => {
-    //   const projectsPage = document.getElementById("projects");
-    //   const contactPage = document.getElementById("contact");
+    window.addEventListener("scroll", () => {
+      const projectsPage = document.getElementById("projects");
+      const contactPage = document.getElementById("contact");
 
-    //   if (forceScrolling == false) {
-    //     if (contactPage.getBoundingClientRect().top / innerHeight < 0.35) {
-    //       hoverShape.style.right = "calc(4.5vw + 120px - 130px + 78.2px)";
-    //       contactBtn.style.color = "var(--bg-secondary-color)";
+      if (forceScrolling == false) {
+        if (contactPage.getBoundingClientRect().top / innerHeight < 0.35) {
+          hoverShape.style.right = "calc(4.5vw + 120px - 130px + 78.2px)";
+          contactBtn.style.color = "var(--bg-secondary-color)";
 
-    //       projectsBtn.style.color = "";
-    //       aboutBtn.style.color = "";
-    //     } else if (
-    //       projectsPage.getBoundingClientRect().top / innerHeight <
-    //       0.35
-    //     ) {
-    //       hoverShape.style.right = "calc(4.5vw + 271px - 130px + 78.2px)";
-    //       projectsBtn.style.color = "var(--bg-secondary-color)";
+          projectsBtn.style.color = "";
+          aboutBtn.style.color = "";
+        } else if (
+          projectsPage.getBoundingClientRect().top / innerHeight <
+          0.35
+        ) {
+          hoverShape.style.right = "calc(4.5vw + 271px - 130px + 78.2px)";
+          projectsBtn.style.color = "var(--bg-secondary-color)";
 
-    //       contactBtn.style.color = "";
-    //       aboutBtn.style.color = "";
-    //     } else {
-    //       hoverShape.style.right = "calc(4.5vw + 413.2px - 130px + 78.2px)";
-    //       aboutBtn.style.color = "var(--bg-secondary-color)";
+          contactBtn.style.color = "";
+          aboutBtn.style.color = "";
+        } else {
+          hoverShape.style.right = "calc(4.5vw + 413.2px - 130px + 78.2px)";
+          aboutBtn.style.color = "var(--bg-secondary-color)";
 
-    //       projectsBtn.style.color = "";
-    //       contactBtn.style.color = "";
-    //     }
-    //   }
-    // });
+          projectsBtn.style.color = "";
+          contactBtn.style.color = "";
+        }
+      }
+    });
 
     const themeChangeBtn = document.createElement("div");
     themeChangeBtn.classList.add("themeChangeBtn", "flex-row", "center");
@@ -155,7 +155,7 @@ const createHome = () => {
     themeIcon.src = sunIconSrc;
     themeIcon.classList.add("themeIconDark");
 
-    let theme = "dark";
+    let theme = "light";
 
     const changeTheme = () => {
       if (theme == "light") {
@@ -270,7 +270,7 @@ const createHome = () => {
     const aboutmeText = document.createElement("span");
     aboutmeText.classList.add("normal-text");
     aboutmeText.textContent =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+      "Hello! I'm a passionate programmer who has a deep appreciation for the fusion of code and captivating designs. My creative spirit fuels my work, and I'm on a constant quest for knowledge, always open to fresh perspectives and flexible in adapting to new challenges. With unwavering determination, I embark on digital journeys to craft not just functional, but truly engaging and innovative experiences.";
 
     aboutmeTextCon.appendChild(aboutmeTextHeader);
     aboutmeTextCon.appendChild(aboutmeTextUnderline);
