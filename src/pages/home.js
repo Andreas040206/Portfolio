@@ -118,35 +118,35 @@ const createHome = () => {
     hoverShape.style.right = "calc(4.5vw + 413.2px - 130px)";
     aboutBtn.style.color = "var(--bg-color)";
 
-    window.addEventListener("scroll", () => {
-      const projectsPage = document.getElementById("projects");
-      const contactPage = document.getElementById("contact");
+    // window.addEventListener("scroll", () => {
+    //   const projectsPage = document.getElementById("projects");
+    //   const contactPage = document.getElementById("contact");
 
-      if (forceScrolling == false) {
-        if (contactPage.getBoundingClientRect().top / innerHeight < 0.35) {
-          hoverShape.style.right = "calc(4.5vw + 120px - 130px + 78.2px)";
-          contactBtn.style.color = "var(--bg-secondary-color)";
+    //   if (forceScrolling == false) {
+    //     if (contactPage.getBoundingClientRect().top / innerHeight < 0.35) {
+    //       hoverShape.style.right = "calc(4.5vw + 120px - 130px + 78.2px)";
+    //       contactBtn.style.color = "var(--bg-secondary-color)";
 
-          projectsBtn.style.style.color = "";
-          aboutBtn.style.color = "";
-        } else if (
-          projectsPage.getBoundingClientRect().top / innerHeight <
-          0.35
-        ) {
-          hoverShape.style.right = "calc(4.5vw + 271px - 130px + 78.2px)";
-          projectsBtn.style.color = "var(--bg-secondary-color)";
+    //       projectsBtn.style.color = "";
+    //       aboutBtn.style.color = "";
+    //     } else if (
+    //       projectsPage.getBoundingClientRect().top / innerHeight <
+    //       0.35
+    //     ) {
+    //       hoverShape.style.right = "calc(4.5vw + 271px - 130px + 78.2px)";
+    //       projectsBtn.style.color = "var(--bg-secondary-color)";
 
-          contactBtn.style.color = "";
-          aboutBtn.style.color = "";
-        } else {
-          hoverShape.style.right = "calc(4.5vw + 413.2px - 130px + 78.2px)";
-          aboutBtn.style.color = "var(--bg-secondary-color)";
+    //       contactBtn.style.color = "";
+    //       aboutBtn.style.color = "";
+    //     } else {
+    //       hoverShape.style.right = "calc(4.5vw + 413.2px - 130px + 78.2px)";
+    //       aboutBtn.style.color = "var(--bg-secondary-color)";
 
-          projectsBtn.style.color = "";
-          contactBtn.style.color = "";
-        }
-      }
-    });
+    //       projectsBtn.style.color = "";
+    //       contactBtn.style.color = "";
+    //     }
+    //   }
+    // });
 
     const themeChangeBtn = document.createElement("div");
     themeChangeBtn.classList.add("themeChangeBtn", "flex-row", "center");
@@ -207,15 +207,39 @@ const createHome = () => {
 
     themeChangeBtn.appendChild(themeIcon);
 
-    navBtnCon.appendChild(aboutBtn);
-    navBtnCon.appendChild(projectsBtn);
-    navBtnCon.appendChild(contactBtn);
-    navBtnCon.appendChild(themeChangeBtn);
-    navBtnCon.appendChild(hoverShape);
+    const screenResized = () => {
+      if (innerWidth < 600) {
+        while (navBtnCon.firstChild) {
+          navBtnCon.removeChild(navBtnCon.lastChild);
+        }
+        navCon.appendChild(logoBehind);
+        navCon.appendChild(logo);
+        navCon.appendChild(navBtnCon);
 
-    navCon.appendChild(logoBehind);
-    navCon.appendChild(logo);
-    navCon.appendChild(navBtnCon);
+        navBtnCon.appendChild(themeChangeBtn);
+      } else {
+        while (navBtnCon.firstChild) {
+          navBtnCon.removeChild(navBtnCon.lastChild);
+        }
+        navBtnCon.appendChild(aboutBtn);
+        navBtnCon.appendChild(projectsBtn);
+        navBtnCon.appendChild(contactBtn);
+        navBtnCon.appendChild(themeChangeBtn);
+        navBtnCon.appendChild(hoverShape);
+
+        navCon.appendChild(logoBehind);
+        navCon.appendChild(logo);
+        navCon.appendChild(navBtnCon);
+      }
+    };
+
+    window.addEventListener("resize", () => {
+      screenResized();
+    });
+
+    window.addEventListener("load", () => {
+      screenResized();
+    });
 
     const infoCon = document.createElement("div");
     infoCon.classList.add("homeInfo-con", "flex-row", "center");

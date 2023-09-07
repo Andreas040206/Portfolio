@@ -4,7 +4,7 @@
   --bg-color: #111827ff;
   --bg-secondary-color: #070c16ff;
   --primary-color: white;
-  --secondary-color: #1798e8;
+  --secondary-color: #17d3e8;
   --third-color: #454545ff;
 }
 
@@ -155,7 +155,7 @@ body {
   animation-direction: reverse;
   animation-duration: 10s;
   animation-delay: 2s;
-  transform: translateX(100vw);
+  transform: translateX(max(100vw, 100%));
 }
 
 .moving-code-upward:nth-child(5) {
@@ -192,11 +192,11 @@ body {
 
 @keyframes moveLeftText {
   0% {
-    transform: translateX(100vw); /* Start off-screen on the right */
+    transform: translateX(max(100vw, 100%)); /* Start off-screen on the right */
     opacity: 1;
   }
   100% {
-    transform: translateX(-100vw); /* End off-screen on the left */
+    transform: translateX(min(-100vw, -100%)); /* End off-screen on the left */
     opacity: 1;
   }
 }
