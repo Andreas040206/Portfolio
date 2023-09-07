@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Development",
+      title: "Portfolio",
     }),
   ],
   output: {

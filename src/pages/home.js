@@ -36,11 +36,11 @@ const createHome = () => {
     });
 
     const logo = new Image();
-    logo.src = LogoDarkSrc;
+    logo.src = LogoLightSrc;
     logo.classList.add("nav-logo");
 
     const logoBehind = new Image();
-    logoBehind.src = LogoDarkBehindSrc;
+    logoBehind.src = LogoLightBehindSrc;
     logoBehind.classList.add("nav-logo", "nav-logo-behind");
 
     logo.addEventListener("click", () => {
