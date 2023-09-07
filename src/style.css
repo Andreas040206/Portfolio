@@ -50,7 +50,7 @@ body {
 }
 
 .heading-text {
-  font-size: 40px;
+  font-size: min(40px, 11vw);
   color: var(--primary-color);
   height: 58.4px;
 }
@@ -432,7 +432,7 @@ body {
 .projects-con {
   background-color: var(--bg-color);
   padding-top: 30vh;
-  gap: 10vh;
+  gap: max(10vh, 100px);
 }
 
 .projects-innerCon {
@@ -458,13 +458,13 @@ body {
 }
 
 .project-con {
-  height: 45vh;
-  width: 1200px;
+  height: 500px;
+  width: min(1200px, 95vw);
   position: relative;
 }
 
 .project-img-right {
-  width: 900px;
+  width: min(900px, 95vw);
   box-shadow: var(--secondary-color) 10px 10px;
   position: absolute;
   right: 0px;
@@ -477,7 +477,7 @@ body {
 }
 
 .project-img-left {
-  width: 900px;
+  width: min(900px, 95vw);
   box-shadow: var(--secondary-color) -10px 10px;
   position: absolute;
   left: 0px;
@@ -491,7 +491,7 @@ body {
 
 .project-text-con {
   height: 150px;
-  width: 600px;
+  width: min(600px, calc(90vw - 24px));
   background-color: var(--bg-secondary-color);
   position: absolute;
   bottom: 50px;
@@ -539,7 +539,7 @@ body {
 .project-btn-live::after {
   content: "<Live/>";
   position: absolute;
-  bottom: -20px;
+  bottom: -22px;
 }
 
 .project-btn:hover {
@@ -553,7 +553,7 @@ body {
 .project-btn-code::after {
   content: "<Code/>";
   position: absolute;
-  bottom: -20px;
+  bottom: -22px;
 }
 
 .projects-more-btn {
@@ -564,7 +564,7 @@ body {
   color: var(--secondary-color);
   border: solid 2px var(--secondary-color);
   transition: 0.3s;
-  margin-top: 5vh;
+  margin-top: max(5vh, 100px);
 }
 
 .projects-more-btn:hover {
@@ -572,6 +572,38 @@ body {
   color: var(--bg-color);
 }
 
+@media (max-width: 1100px) {
+  .project-text-con {
+    bottom: -50px;
+  }
+  .projectsUnderline {
+    margin-bottom: -50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-con {
+    height: 600px;
+  }
+  .project-text-con {
+    bottom: -100px;
+    padding-bottom: 50px;
+  }
+  .project-img-right {
+    object-fit: cover;
+    height: min(70vh, 500px);
+  }
+  .project-img-left {
+    height: min(70vh, 500px);
+    object-fit: cover;
+  }
+  .project-text-header {
+    font-size: 20px;
+  }
+  .project-tek-text {
+    display: none;
+  }
+}
 /* Contact */
 
 .contact-con {
